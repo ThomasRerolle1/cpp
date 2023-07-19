@@ -6,7 +6,7 @@
 /*   By: trerolle <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 19:43:49 by trerolle          #+#    #+#             */
-/*   Updated: 2023/07/14 14:04:50 by trerolle         ###   ########.fr       */
+/*   Updated: 2023/07/19 18:54:25 by trerolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,35 @@
 #include "BitcoinExchange.hpp" 
 
 
-int	main()
+int	main(int argc, char **argv)
 {
 	BitcoinExchange	btc;
 
-	btc.displayBTC("input.txt");
+
+	if (argc != 2)
+	{
+		std::cout << "Btc must take 2 arguments" << std::endl;
+		return (0);
+	}
+	btc.displayBTC(argv[1]);
+/*	BitcoinExchange::t_date	d1 = {1, 2, 3};
+	BitcoinExchange::t_date	d2 = {2, 2, 3};
+
+	if (d1 == d2)
+		std::cout << "working\n";
+	try
+	{
+		d1 = "2023-05-02";
+		for (int i  = 0; i < 365; i++)
+		{
+			d1++;
+			std::cout << d1.year << " " << d1.month << " " << d1.day << std::endl;
+		}
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}*/
 
 	/*
 	std::string					line;
